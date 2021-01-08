@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!-- Code By Webdevtrick ( https://webdevtrick.com ) -->
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Drowsiness Detection</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/css/dataTables.bootstrap.min.css'>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,500" rel="stylesheet"/>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+  <style>
+      /* Code By Webdevtrick ( https://webdevtrick.com ) */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    tr:nth-of-type(odd) {
+        background: #f4f4f4;
+    }
+    
+    tr:nth-of-type(even) {
+        background: #fff;
+    }
+    
+    th {
+        background: #5cb85c;
+        color: #ffffff;
+        font-weight: 300;
+    }
+    
+    td,
+    th {
+        padding: 10px;
+        border: 1px solid #ccc;
+        text-align: left;
+    }
+    
+    td:nth-of-type(1) {
+        font-weight: 500 !important;
+    }
+    
+    td {
+        font-family: 'Roboto', sans-serif !important;
+        font-weight: 300;
+        line-height: 20px;
+    }
+    
+    span {
+        font-style: italic
+    }
+    
+    @media only screen and (max-width: 760px),
+    (min-device-width: 768px) and (max-device-width: 1024px) {
+    
+        table.responsive,
+        .responsive thead,
+        .responsive tbody,
+        .responsive th,
+        .responsive td,
+        .responsive tr {
+        display: block !important;
+        }
+    
+        .responsive thead tr {
+        position: absolute !important;
+        top: -9999px;
+        left: -9999px;
+        }
+    
+        .responsive tr {
+        border: 1px solid #ccc;
+        }
+    
+        .responsive td {
+        border: none;
+        border-bottom: 1px solid #eee !important;
+        position: relative !important;
+        padding-left: 25% !important;
+        }
+    
+        .responsive td:before {
+        position: absolute !important;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap !important;
+        font-weight: 500 !important;
+        }
+    
+    
+        .responsive td:before {
+        content: attr(data-table-header) !important;
+        }
+    }
+  </style>
+</head>
+
+<body style="background-color: aquamarine;">
+
+
+<div class="row" >
+<div class="container"> 
+  
+  <h1>Drowsiness Detection</h1> 
+  <table class="table responsive" id="example">
+	<thead>
+		<tr>
+			<th scope="col">Date</th>
+			<th scope="col">Time</th>
+			<th scope="col">Status</th>
+		</tr>
+	</thead>
+	<tbody>
+        {% for row in details %}
+        <tr>
+            <td>{{row.dat}}</td>
+            <td>{{row.tim}}</td>
+            <td>{{row.status}}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td></td>
+            <td class="text-center">
+                <h4 style="color:black">No data found.</h4>
+            </td>
+            <td></td>
+        </tr>
+        {% endfor %}
+	</tbody>
+</table>
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/dataTables.bootstrap.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.0/moment.min.js'></script>
+<script>
+    $(document).ready(function() {
+        $('#example').DataTable();
+    } );
+</script>
+<script>
+    window.setTimeout(function () {
+        window.location.reload();
+    }, 5000);
+</script>
+
+
+</body>
+</html>
