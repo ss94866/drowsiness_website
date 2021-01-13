@@ -25,7 +25,7 @@ SECRET_KEY = 'p(yydpib07a-&w+@4=@^9li(d7-5s*=cbk_uc5h-k#a*lueli('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['drowsinessdetectiontpgit.herokuapp.com']
 
 
 # Application definition
