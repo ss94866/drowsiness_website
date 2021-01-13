@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'p(yydpib07a-&w+@4=@^9li(d7-5s*=cbk_uc5h-k#a*lueli('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['drowsinessdetectiontpgit.herokuapp.com']
 
