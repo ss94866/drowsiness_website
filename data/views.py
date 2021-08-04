@@ -5,6 +5,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 import datetime
 from .models import date_time
+import pytz
 
 @csrf_exempt
 def index(request):
@@ -14,7 +15,8 @@ def index(request):
         data = request.POST['data']
         print(data)
         if data == 'ON' or data == 'OFF':
-            x = datetime.datetime.now()
+            tz_NY = pytz.timezone('Asia/Kolkata')
+            x = datetime.datetime.now(tz_NY)
 
             time = x.strftime("%X")
             date = x.strftime("%x")
